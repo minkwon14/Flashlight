@@ -14,9 +14,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var strBtn: UIButton!
     @IBOutlet weak var lightBtn: UIButton!
     @IBOutlet weak var powSlider: UISlider!
+    @IBOutlet weak var timeSlider: UISlider!
     
     var clickCheck = false
-    
+    var powerCheck = false
+    var timeCheck = false
+    var currentPower: Float = 1.0
+    var currentTime: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +34,6 @@ class ViewController: UIViewController {
     @IBAction func modeOn(_ sender: Any) {
         if clickCheck == false {
             clickCheck = true
-            toggleTorch(on: true)
             print ("Torch is ON!")
         } else {
             clickCheck = false
@@ -43,6 +46,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func modeStrobe(_ sender: Any) {
+        
     }
     
     func toggleTorch(on: Bool) {
@@ -53,24 +57,38 @@ class ViewController: UIViewController {
                 try device.lockForConfiguration()
                 
                 if on == true {
-                    device.torchMode = .on
+                    //device.torchMode = .on
+                    try! device.setTorchModeOn(level: currentPower)
                 } else {
                     device.torchMode = .off
                 }
                 device.unlockForConfiguration()
+                
             } catch {
                 print ("Torch could not be used!!")
             }
+ 
         } else {
             print ("Torch is not available!")
         }
     }
     
-    func ifClicked () {
-        
+    @IBAction func powSliderValue(_ sender: UISlider) {
+        currentPower = sender.value
+        print ("Current Power is \(currentPower)")
+        // toggleTorch(on: clickCheck)
+        powerCheck = true
     }
     
-
+    @IBAction func timeSliderValue(_ sender: UISlider) {
+        currentTime = Int(sender.value)
+        print ("Current Time is \(currentTime)")
+        timeCheck = true
+    
+    }
+    
+   
+    
     
     
 }
