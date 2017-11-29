@@ -37,7 +37,7 @@
                                             <action selector="powSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZGZ-Ug-JFl"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="2" minimumValueImage="flash02" maximumValueImage="flash01" translatesAutoresizingMaskIntoConstraints="NO" id="kK8-2b-fs1" customClass="DesignableSlider" customModule="Flashlight" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="20" minimumValueImage="flash02" maximumValueImage="flash01" translatesAutoresizingMaskIntoConstraints="NO" id="kK8-2b-fs1" customClass="DesignableSlider" customModule="Flashlight" customModuleProvider="target">
                                         <rect key="frame" x="6" y="484" width="363" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
